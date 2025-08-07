@@ -1,0 +1,38 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <title>Conversor de Temperatura</title>
+</head>
+<body>
+    <main>
+        <h1>Conversor de Temperatura</h1>
+        <form>
+           <h3>Convertir</h3> 
+           <div class="parent" id="smalldiv">
+                <input type="number" id="number" placeholder="Ingresa temperatura">
+                <select id="initial">
+                    <option selected hidden value="0" ></option>
+                    <option value="C">(C°)</option>
+                    <option value="F">(F°)</option>
+                    <option value="K">(K°)</option>
+                </select>
+                <h3 onclick="changeValues()"><i class="fa-solid fa-arrow-right-arrow-left"></i></h3>
+                <select id="resultTemp">
+                    <option selected hidden value="0"></option>
+                    <option value="C">(C°)</option>
+                    <option value="F">(F°)</option>
+                    <option value="K">(K°)</option>
+                </select>
+           </div>
+            
+            <button type="submit">Convertir</button>
+        </form> 
+        <h3 id="result"></h3>
+
+    </main>
+</body>
+<script src="/javascript.js"></script>
+</html>

@@ -22,35 +22,35 @@ document.querySelector("form").addEventListener("submit", function(event) {
 
 });
 
-function celsiusTo(initialTemperature, targetUnit) {
-  if (targetUnit == "C") {
+function celsiusTo(initialTemperature, targetunidad) {
+  if (targetunidad == "C") {
     return initialTemperature;
-  } else if (targetUnit == "F") {
+  } else if (targetunidad == "F") {
     return initialTemperature * 9 / 5 + 32;
-  } else if (targetUnit == "K") {
+  } else if (targetunidad == "K") {
     return initialTemperature + 273.15;
   } else {
     return "Unidad inválida";
   }
 }
 
-function farenheitTo(initialTemperature, targetUnit) {
-  if (targetUnit == "F") {
+function farenheitTo(initialTemperature, targetunidad) {
+  if (targetunidad == "F") {
     return initialTemperature;
-  } else if (targetUnit == "C") {
+  } else if (targetunidad == "C") {
     return (initialTemperature-32)*(5/9);
-  } else if (targetUnit == "K") {
+  } else if (targetunidad == "K") {
     return (initialTemperature-32)*(5/9)+273.15;
   } else {
     return "Unidad inválida";
   }
 }
-function kelvinTo(initialTemperature, targetUnit) {
-  if (targetUnit == "K") {
+function kelvinTo(initialTemperature, targetunidad) {
+  if (targetunidad == "K") {
     return initialTemperature;
-  } else if (targetUnit == "F") {
+  } else if (targetunidad == "F") {
     return (initialTemperature-273.15)*(9/5)+32;
-  } else if (targetUnit == "C") {
+  } else if (targetunidad == "C") {
     return (initialTemperature-273.15);
   } else {
     return "Unidad inválida";
@@ -65,26 +65,26 @@ function changeValues(){
     resultSelect.selectedIndex = index1;
 };
 
-function checkAndApplyStyles(finalTemp, unit) {
-  let tempInC;
+function checkAndApplyStyles(finalTemp, unidad) {
+  let temperaturaFinal;
 
-  if (unit === "C") {
-    tempInC = finalTemp;
-  } else if (unit === "F") {
-    tempInC = (finalTemp - 32) * 5 / 9;
-  } else if (unit === "K") {
-    tempInC = finalTemp - 273.15;
+  if (unidad === "C") {
+    temperaturaFinal = finalTemp;
+  } else if (unidad == "F") {
+    temperaturaFinal = (finalTemp - 32) * 5 / 9;
+  } else if (unidad == "K") {
+    temperaturaFinal = finalTemp - 273.15;
   }
 
-  if (tempInC > 100) {
+  if (temperaturaFinal > 100) {
     document.body.style.backgroundColor = "#FFFEC8FF";
     document.body.style.color = "black";
     document.getElementById("decoration").style.backgroundColor = "#EB4A0AFF";
     document.querySelector("footer").style.backgroundColor = "#ff9999";
     document.querySelector("footer div").style.backgroundColor = "#ff9999";
     document.querySelector("form").style.backgroundColor = "#0303032D";
-    document.querySelectorAll("footer a, footer p").forEach(el => {
-      el.style.color = "black";
+    document.querySelectorAll("footer a, footer p").forEach(element => {
+      element.style.color = "black";
     });
   } else {
     document.body.style.backgroundColor = "rgb(13, 0, 27)";
@@ -92,8 +92,8 @@ function checkAndApplyStyles(finalTemp, unit) {
     document.getElementById("decoration").style.backgroundColor = "rgb(114, 145, 192)";
     document.querySelector("footer").style.backgroundColor = "rgb(26, 0, 51)";
     document.querySelector("form").style.backgroundColor = "rgba(255, 255, 255, 0.07)";
-    document.querySelectorAll("footer a, footer p").forEach(el => {
-      el.style.color = "white";
+    document.querySelectorAll("footer a, footer p").forEach(element => {
+      element.style.color = "white";
     });
   }
 }

@@ -91,6 +91,7 @@ function checkAndApplyStyles(finalTemp, unidad) {
     document.body.style.color = "rgb(253, 229, 229)";
     document.getElementById("decoration").style.backgroundColor = "rgb(114, 145, 192)";
     document.querySelector("footer").style.backgroundColor = "rgb(26, 0, 51)";
+    document.querySelector("footer div").style.backgroundColor = "rgb(26, 0, 51)";
     document.querySelector("form").style.backgroundColor = "rgba(255, 255, 255, 0.07)";
     document.querySelectorAll("footer a, footer p").forEach(element => {
       element.style.color = "white";

@@ -4,23 +4,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <title>Conversor de Temperatura</title>
 </head>
 <body>
+   <section id="decoration"></section> 
     <main>
         <h1>Conversor de Temperatura</h1>
         <form>
            <h3>Convertir</h3> 
            <div class="parent" id="smalldiv">
-                <input type="number" id="number" placeholder="Ingresa temperatura">
-                <select id="initial">
+                <input type="number" id="number" required placeholder="Ingresa temperatura">
+                <select id="initial" required>
                     <option selected hidden value="0" ></option>
                     <option value="C">(C°)</option>
                     <option value="F">(F°)</option>
                     <option value="K">(K°)</option>
                 </select>
                 <h3 onclick="changeValues()"><i class="fa-solid fa-arrow-right-arrow-left"></i></h3>
-                <select id="resultTemp">
+                <select id="resultTemp"required>
                     <option selected hidden value="0"></option>
                     <option value="C">(C°)</option>
                     <option value="F">(F°)</option>
@@ -28,11 +30,18 @@
                 </select>
            </div>
             
-            <button type="submit">Convertir</button>
+            <button type="submit" class="button-10" role="button"><span class="text">Convertir</span></button>
         </form> 
         <h3 id="result"></h3>
 
     </main>
+    <footer>
+        <div></div>
+        <p>Por: <a href="https://github.com/G10sr">Giovanni Sanchez Román</a></p>
+        <p>Web Temp ©</p>
+        <p>Colegio Tenico Profesional CIT</p>
+
+    </footer>
 </body>
 <script src="/javascript.js"></script>
 </html>

@@ -18,6 +18,8 @@ document.querySelector("form").addEventListener("submit", function(event) {
     operationfinal = kelvinTo(initialTemperature, tempetureMeasurement2);
     displayFinal.textContent = operationfinal.toFixed(2) + tempetureMeasurement2 + "°";
   }
+    checkAndApplyStyles(operationfinal, tempetureMeasurement2);
+
 });
 
 function celsiusTo(initialTemperature, targetUnit) {
@@ -62,3 +64,36 @@ function changeValues(){
     initialSelect.selectedIndex = index2;
     resultSelect.selectedIndex = index1;
 };
+
+function checkAndApplyStyles(finalTemp, unit) {
+  let tempInC;
+
+  if (unit === "C") {
+    tempInC = finalTemp;
+  } else if (unit === "F") {
+    tempInC = (finalTemp - 32) * 5 / 9;
+  } else if (unit === "K") {
+    tempInC = finalTemp - 273.15;
+  }
+
+  if (tempInC > 100) {
+    document.body.style.backgroundColor = "#FFFEC8FF";
+    document.body.style.color = "black";
+    document.getElementById("decoration").style.backgroundColor = "#EB4A0AFF";
+    document.querySelector("footer").style.backgroundColor = "#ff9999";
+    document.querySelector("footer div").style.backgroundColor = "#ff9999";
+    document.querySelector("form").style.backgroundColor = "#0303032D";
+    document.querySelectorAll("footer a, footer p").forEach(el => {
+      el.style.color = "black";
+    });
+  } else {
+    document.body.style.backgroundColor = "rgb(13, 0, 27)";
+    document.body.style.color = "rgb(253, 229, 229)";
+    document.getElementById("decoration").style.backgroundColor = "rgb(114, 145, 192)";
+    document.querySelector("footer").style.backgroundColor = "rgb(26, 0, 51)";
+    document.querySelector("form").style.backgroundColor = "rgba(255, 255, 255, 0.07)";
+    document.querySelectorAll("footer a, footer p").forEach(el => {
+      el.style.color = "white";
+    });
+  }
+}
